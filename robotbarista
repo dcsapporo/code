@@ -1,0 +1,138 @@
+#Let's start a coffee shop together!! We're going to build a coffee shop using some new Python programming concepts!!
+
+#Let's build robot Barista!!
+
+print("Hello, Welcome to NetworkChuck Coffee!!!!!!!!!!!!!!")
+
+name = input("What is your name?\n")
+
+
+
+#print (type(good_deeds))
+
+if name == "Ben" or name == "Patricia" or name == "Loki":
+  evil_status = input("Are you Evil?\n")
+  good_deeds = int(input("How many good deeds have you done today "+ name + "?\n"))
+  if evil_status == "Yes" and good_deeds < 4:
+    print("You're not welcome here Evil "+ name +"!!\n" + "Get out of here!!!!!\n")
+    exit()
+  
+  else:
+    if name == "Ben" and evil_status == "No":
+      print("Oh, you're one of those good Bens. Come on in!\n\n\n\n")
+    elif name == "Patricia" and evil_status == "No":
+      print("Oh, you're one of those good Patricias. Come on in!\n\n\n\n")
+    elif name == "Loki" and evil_status == "No":
+      print("Oh, you're one of those good Lokis. Come on in!\n\n\n\n")
+else: 
+ print("Hello "+ name +", thank you so much for coming in today!!\n\n\n") 
+
+drinks = ["Black Coffee", "Dirty Chai", "Espresso", "Latte","Cappucino", "Green Tea"]
+
+
+BC = "Black Coffee"
+DC = "Dirty Chai"
+E = "Espresso"
+L = "Latte"
+C = "Cappucino"
+GT = "Green Tea"
+
+#menu = (BC+"\n"+DC+"\n"+E+"\n"+L+"\n"+C+"\n"+GT+"\n")
+
+pricebc = 1.00
+pricedc = 5.00
+pricee = 2.50
+pricel = 3.00
+pricec = 3.50
+pricegt = 2.00
+
+BCprice = str(pricebc)
+DCprice = str(pricedc)
+Eprice = str(pricee)
+Lprice = str(pricel)
+Cprice = str(pricec)
+GTprice = str(pricegt)
+
+menu = (BC+" $"+BCprice+"\n"+DC+"   $"+DCprice+"\n"+E+"     $"+ Eprice+"\n"+L+"        $"+Lprice+"\n"+C+"    $"+Cprice+"\n"+GT+"    $"+GTprice+"\n")
+
+selection = input(name + ", what would you like from our menu?\n"+ "Here is what we are serving.\n\n"+menu+"\nWhat would you like?\n")
+
+
+if selection == "Black Coffee":
+    price = pricebc
+elif selection == "Dirty Chai":
+    price = pricedc
+elif selection == "Espresso":
+    price = pricee
+elif selection == "Latte":
+    price = pricel
+elif selection == "Cappucino":
+    price = pricec
+elif selection == "Green Tea":
+    price = pricegt
+else:
+  evil_status = input("We don't have that here.\n"+"Are you Evil " + name+ "?\n")
+  
+  if evil_status == "Yes":
+    print("I told you aren't welcome here!!\n"+"Get out of here, EVIL " + name +"!!!!!!\n")
+    price = 0
+    exit()
+  elif evil_status == "No":
+    selection = "Espresso"
+    special = 2.50
+    print("Why don't you try our special of the day.\n")
+    re_selection = input(name + ", would you like the special?\n")
+    def something(re_selection):
+      if re_selection == "Yes":
+        return 
+      elif re_selection == "No":
+        print("Sorry we can't help you.\n")
+        price = 0
+        exit()
+  something(re_selection) 
+  price = special
+quantity = input("Sounds good "+name+"!\n"+ "How many would you like?\n")    
+
+total = int(quantity) * price 
+
+if int(quantity) == 1:
+    confirmation = input(name + " you want " + quantity +" "+ selection + ".\n" + "Is that right?")
+else:
+    confirmation = input(name + " you want " + quantity +" "+ selection + "s.\n" + "Is that right?\n")
+if confirmation == "Yes":
+    print (name+", your total is "+ str(total)+"\n" + "We'll have your order ready in a moment.\n"+"Thank you, "+ name)
+elif confirmation == "No":
+    quantity = input(name+", I'm so sorry. \n" + "How many do you wnat?\n")
+    if int(quantity) == 1:
+      total = int(quantity) * price
+      print(name+", your order is "+ quantity + " " + selection+".\n")
+      print("Your total is " + str(total) + "\n" + "Thank you " + name+ "\n")
+    elif int(quantity) > 1:
+      total = int(quantity) * price
+      print(name + ", your order is " + quantity + " " + selection + "s.\n" + "Your total is " + str(total) + "\n" + "Thank you " + name + "\n")
+
+
+
+
+#print("You said, "+confirmation+"!\n")
+
+#name = "Dan"
+
+#age = 54
+
+#actual_age = 54.75
+
+#print(name)
+#print(age)
+##print(type(name))
+#print(type(age))
+#print(type(actual_age))
+
+#math = 5 ** 7 + 6 / 9 * 6 - 4
+#print (math)
+#results = age + actual_age + math
+#print(type(results))
+
+
+#if not name == "Ben"
+#if name != "Ben"
