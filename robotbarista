@@ -6,26 +6,32 @@ print("Hello, Welcome to NetworkChuck Coffee!!!!!!!!!!!!!!")
 
 name = input("What is your name?\n")
 
+name_exception_list = ["Ben","ben","Patricia","patricia","Loki","loki"]
 
+if name in name_exception_list:
 
-#print (type(good_deeds))
-
-if name == "Ben" or name == "Patricia" or name == "Loki":
   evil_status = input("Are you Evil?\n")
-  good_deeds = int(input("How many good deeds have you done today "+ name + "?\n"))
-  if evil_status == "Yes" and good_deeds < 4:
-    print("You're not welcome here Evil "+ name +"!!\n" + "Get out of here!!!!!\n")
-    exit()
   
-  else:
-    if name == "Ben" and evil_status == "No":
-      print("Oh, you're one of those good Bens. Come on in!\n\n\n\n")
-    elif name == "Patricia" and evil_status == "No":
-      print("Oh, you're one of those good Patricias. Come on in!\n\n\n\n")
-    elif name == "Loki" and evil_status == "No":
-      print("Oh, you're one of those good Lokis. Come on in!\n\n\n\n")
-else: 
- print("Hello "+ name +", thank you so much for coming in today!!\n\n\n") 
+  if evil_status == "Yes":
+    
+    good_deeds = int(input("How many good deeds have you done today "+   name + "?\n"))
+    
+    if good_deeds < 4:
+      print("You're not welcome here Evil "+ name +"!!\n" + "Get out   of here!!!!!\n")
+      exit()
+  
+    
+  if evil_status == "No":
+        print("Oh, you're one of those good " + name + ". Come on in!\n\n\n\n")
+      #elif name == "Patricia" and evil_status == "No":
+        #print("Oh, you're one of those good Patricias. Come on in!\n\n\n\n")
+      #elif name == "Loki" and evil_status == "No":
+       # print("Oh, you're one of those good Lokis. Come on in!\n\n\n\n")
+    
+  pass 
+#  break
+#else:
+print("Hello "+ name +", thank you so much for coming in today!!\n\n\n") 
 
 drinks_list = ["Black Coffee", "Dirty Chai", "Espresso", "Latte","Cappucino", "Green Tea"]
 
@@ -135,3 +141,7 @@ elif confirmation == "No":
 #print (math)
 #results = age + actual_age + math
 #print(type(results))
+
+#print (type(good_deeds))
+#if not name == "Ben"
+#if name != "Ben"
