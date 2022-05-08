@@ -40,12 +40,14 @@ GT = drinks_list [-1]
 
 #menu = (BC+"\n"+DC+"\n"+E+"\n"+L+"\n"+C+"\n"+GT+"\n")
 
-pricebc = 1.00
-pricedc = 5.00
-pricee = 2.50
-pricel = 3.00
-pricec = 3.50
-pricegt = 2.00
+price_list = [1.00, 5.00, 2.50, 3.00, 3.50, 2.00]
+
+pricebc = price_list [0]
+pricedc = price_list [1]
+pricee = price_list [2]
+pricel = price_list [3]
+pricec = price_list [4]
+pricegt = price_list [5]
 
 BCprice = str(pricebc)
 DCprice = str(pricedc)
@@ -107,10 +109,10 @@ elif confirmation == "No":
     if int(quantity) == 1:
       total = int(quantity) * price
       print(name+", your order is "+ quantity + " " + drinks_list[(int(selection)-1)]+".\n")
-      print("Your total is " + str(total) + "\n" + "Thank you " + name+ "\n")
+      print("Your total is $" + str(total) + "\n" + "Thank you " + name+ "\n")
     elif int(quantity) > 1:
       total = int(quantity) * price
-      print(name + ", your order is " + quantity + " " + drinks_list[(int(selection)-1)] + "s.\n" + "Your total is " + str(total) + "\n" + "Thank you " + name + "\n")
+      print(name + ", your order is " + quantity + " " + drinks_list[(int(selection)-1)] + "s.\n" + "Your total is $" + str(total) + "\n" + "Thank you " + name + "\n")
 
 
 
@@ -133,7 +135,3 @@ elif confirmation == "No":
 #print (math)
 #results = age + actual_age + math
 #print(type(results))
-
-
-#if not name == "Ben"
-#if name != "Ben"
