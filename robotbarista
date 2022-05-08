@@ -27,15 +27,16 @@ if name == "Ben" or name == "Patricia" or name == "Loki":
 else: 
  print("Hello "+ name +", thank you so much for coming in today!!\n\n\n") 
 
-drinks = ["Black Coffee", "Dirty Chai", "Espresso", "Latte","Cappucino", "Green Tea"]
+drinks_list = ["Black Coffee", "Dirty Chai", "Espresso", "Latte","Cappucino", "Green Tea"]
 
 
-BC = "Black Coffee"
-DC = "Dirty Chai"
-E = "Espresso"
-L = "Latte"
-C = "Cappucino"
-GT = "Green Tea"
+BC = drinks_list [0]
+DC = drinks_list [1]
+E = drinks_list [2]
+L = drinks_list [-3]
+C = drinks_list [-2]
+GT = drinks_list [-1]
+
 
 #menu = (BC+"\n"+DC+"\n"+E+"\n"+L+"\n"+C+"\n"+GT+"\n")
 
@@ -53,22 +54,22 @@ Lprice = str(pricel)
 Cprice = str(pricec)
 GTprice = str(pricegt)
 
-menu = (BC+" $"+BCprice+"\n"+DC+"   $"+DCprice+"\n"+E+"     $"+ Eprice+"\n"+L+"        $"+Lprice+"\n"+C+"    $"+Cprice+"\n"+GT+"    $"+GTprice+"\n")
+menu = ("1: "+BC+" $"+BCprice+"\n"+"2: "+DC+"   $"+DCprice+"\n"+"3: "+E+"     $"+ Eprice+"\n"+"4: "+L+"        $"+Lprice+"\n"+"5: "+C+"    $"+Cprice+"\n"+"6: "+GT+"    $"+GTprice+"\n")
 
-selection = input(name + ", what would you like from our menu?\n"+ "Here is what we are serving.\n\n"+menu+"\nWhat would you like?\n")
+selection = input(name + ", what would you like from our menu?\n"+ "Here is what we are serving.\n\n"+menu+"\nWhat would you like?\n"+"Please enter your prefered beverage's number.\n")
 
 
-if selection == "Black Coffee":
+if selection == "1":
     price = pricebc
-elif selection == "Dirty Chai":
+elif selection == "2":
     price = pricedc
-elif selection == "Espresso":
+elif selection == "3":
     price = pricee
-elif selection == "Latte":
+elif selection == "4":
     price = pricel
-elif selection == "Cappucino":
+elif selection == "5":
     price = pricec
-elif selection == "Green Tea":
+elif selection == "6":
     price = pricegt
 else:
   evil_status = input("We don't have that here.\n"+"Are you Evil " + name+ "?\n")
@@ -96,20 +97,20 @@ quantity = input("Sounds good "+name+"!\n"+ "How many would you like?\n")
 total = int(quantity) * price 
 
 if int(quantity) == 1:
-    confirmation = input(name + " you want " + quantity +" "+ selection + ".\n" + "Is that right?")
+    confirmation = input(name + " you want " + quantity +" "+ drinks_list[(int(selection)-1)] + ".\n" + "Is that right?")
 else:
-    confirmation = input(name + " you want " + quantity +" "+ selection + "s.\n" + "Is that right?\n")
+    confirmation = input(name + " you want " + quantity +" "+ drinks_list[(int(selection)-1)] + "s.\n" + "Is that right?\n")
 if confirmation == "Yes":
     print (name+", your total is "+ str(total)+"\n" + "We'll have your order ready in a moment.\n"+"Thank you, "+ name)
 elif confirmation == "No":
     quantity = input(name+", I'm so sorry. \n" + "How many do you wnat?\n")
     if int(quantity) == 1:
       total = int(quantity) * price
-      print(name+", your order is "+ quantity + " " + selection+".\n")
+      print(name+", your order is "+ quantity + " " + drinks_list[(int(selection)-1)]+".\n")
       print("Your total is " + str(total) + "\n" + "Thank you " + name+ "\n")
     elif int(quantity) > 1:
       total = int(quantity) * price
-      print(name + ", your order is " + quantity + " " + selection + "s.\n" + "Your total is " + str(total) + "\n" + "Thank you " + name + "\n")
+      print(name + ", your order is " + quantity + " " + drinks_list[(int(selection)-1)] + "s.\n" + "Your total is " + str(total) + "\n" + "Thank you " + name + "\n")
 
 
 
